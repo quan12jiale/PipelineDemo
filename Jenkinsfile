@@ -35,7 +35,7 @@ pipeline {
     }
     
     environment {
-        CodeDir = "F:\\Qt\\Pipeline"
+        CodeDir = "F:\\Pipeline\\PipelineDemo"
     }
     
     stages {
@@ -43,6 +43,7 @@ pipeline {
         {
             steps
             {
+	echo "start build"
                 echo "current branch: ${env.BRANCH_NAME}"
                 script {
                     // ≤‚ ‘bat returnStdout: true
