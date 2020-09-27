@@ -26,9 +26,12 @@ pipeline {
         {
             steps
             {
-				def sGMPCmake = readFile "F:\\GTJ\\source\\CMake\\tools\\pkguser\\pkgs\\GMP.cmake"
-				def zipURL = getRe(sGMPCmake, "URL\\s*\\\"([^\\\"]*)\\\"", 1)
-				echo zipURL
+				script 
+				{
+					def sGMPCmake = readFile "F:\\GTJ\\source\\CMake\\tools\\pkguser\\pkgs\\GMP.cmake"
+					def zipURL = getRe(sGMPCmake, "URL\\s*\\\"([^\\\"]*)\\\"", 1)
+					echo zipURL
+				}
             }
         }
     }
