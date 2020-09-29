@@ -26,16 +26,8 @@ pipeline {
         {
             steps
             {
-				script 
-				{
-					def sGMPCmake = readFile "F:\\GTJ\\source\\CMake\\tools\\pkguser\\pkgs\\GMP.cmake"
-					def zipURL = getRe(sGMPCmake, "URL\\s*\\\"([^\\\"]*)\\\"", 1)
-					echo zipURL
-					
-					sWin32OrX64 = "Win32";
-					def sDBuildType = (sWin32OrX64 == "Win32" ? "X64" : "Win32")
-					echo sDBuildType
-				}
+				build job: 'PipelineDemoSingle'
+				echo "build job success"
             }
         }
     }
