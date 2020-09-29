@@ -26,7 +26,7 @@ pipeline {
         {
             steps
             {
-				build job: 'PipelineDemoSingle'
+				build job: 'PipelineDemoSingle', wait: false
 				echo "build job success"
             }
         }
